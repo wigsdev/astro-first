@@ -1,17 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// 1. INICIO SCRIPT DEL COMPONENTE (FrontMatter)
+// JavaScript que corre en el servidor
+import Ficha from "../components/Ficha.astro";
+import Layout from "../layouts/Layout.astro";
+// FIN DEL SCRIPT
 ---
 
+<!-- 2. INICIO DE LA PLANTILLA --><!-- HTML + expresiones entre { } -->
 <Layout>
-	<main>
-		<h1>Mi nuevo sitio recargado</h1>
+  <main class="contenedor">
+    <nav class="navegacion">
+      <a href="/libros" class="enlace-nav">📚 Ver Biblioteca de Libros &rarr;</a>
+    </nav>
 
-		<nav aria-label="Navegación principal">
-			<ul>
-				<li><a href="/sobre-mi">Sobre mi</a></li>
-				<li><a href="/contacto">Contacto</a></li>
-				<li><a href="/blog">Blog</a></li>
-			</ul>
-		</nav>
-	</main>
+    <Ficha />
+  </main>
 </Layout>
+
+<style>
+  .contenedor {
+    padding: 2rem;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .navegacion {
+    margin-bottom: 1.5rem;
+  }
+  .enlace-nav {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  .enlace-nav:hover {
+    background-color: #2563eb;
+  }
+</style>
+<!-- FIN DE LA PLANTILLA -->
