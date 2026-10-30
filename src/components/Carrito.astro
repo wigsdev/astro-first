@@ -1,0 +1,87 @@
+---
+const carrito = [35, 42.5, 18];
+const total = carrito.reduce((s, p) => s + p, 0);
+const vacio = carrito.length === 0;
+---
+
+<section class="carrito-card">
+  <h3>🛒 Carrito de Compras</h3>
+
+  {
+    vacio ? (
+      <div class="carrito-vacio">
+        <p>Tu carrito está vacío.</p>
+        <span class="subtexto">Agrega productos para comenzar tu pedido.</span>
+      </div>
+    ) : (
+      <div class="carrito-lleno">
+        <div class="resumen">
+          <span>{carrito.length} productos</span>
+          <span class="total">Total: S/ {total.toFixed(2)}</span>
+        </div>
+        <button class="btn-pagar">Proceder al pago &rarr;</button>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .carrito-card {
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    max-width: 400px;
+    margin-top: 1rem;
+    font-family: system-ui, sans-serif;
+  }
+
+  .carrito-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+
+  .carrito-vacio p {
+    margin: 0;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .subtexto {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+    color: #475569;
+  }
+
+  .total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #15803d; /* verde destacado */
+  }
+
+  .btn-pagar {
+    width: 100%;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-pagar:hover {
+    background-color: #2563eb;
+  }
+</style>

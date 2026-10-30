@@ -1,0 +1,18 @@
+---
+const diasPublicado = 3;
+---
+
+<h4>Curso de Astro</h4>
+{diasPublicado < 7 && <span class="badge-nuevo">¡Nuevo!</span>}
+
+<style>
+  .badge-nuevo {
+    background-color: #fef08a; /* amarillo suave */
+    color: #854d0e; /* texto marrón oscuro para buen contraste */
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+</style>

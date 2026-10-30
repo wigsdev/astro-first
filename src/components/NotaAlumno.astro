@@ -1,0 +1,23 @@
+---
+const nota = 20;
+const aprobado = nota >= 11;
+---
+
+<p class={aprobado ? "aprobado" : "desaprobado"}>
+  {aprobado ? "Aprobado" : "Desaprobado"}
+</p>
+{
+  nota === 20 && (
+    <p class="excelente">🌟 ¡Felicitaciones! Calificación perfecta.</p>
+  )
+}
+
+<style>
+  .aprobado {
+    color: green;
+  }
+
+  .desaprobado {
+    color: red;
+  }
+</style>

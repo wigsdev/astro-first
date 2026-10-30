@@ -1,14 +1,23 @@
 ---
-const abierto = true;
-const stock = 3;
+import Horario from "./Horario.astro";
+import Carrito from "./Carrito.astro";
 ---
 
-{abierto && <span>Abierto ahora</span>}
-{
-  abierto ? (
-    <p>Te atendemos hasta las 8 p. m.</p>
-  ) : (
-    <p>Volvemos mañana a las 8 a. m.</p>
-  )
-}
-{stock < 5 && <p>¡Solo quedan {stock}!</p>}
+<main class="tienda-container">
+  <h2>Nuestra Tienda</h2>
+  <div class="tienda-grid">
+    <Horario />
+    <Carrito />
+  </div>
+</main>
+
+<style>
+  .tienda-container {
+    padding: 1.5rem;
+  }
+  .tienda-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+</style>

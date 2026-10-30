@@ -1,0 +1,52 @@
+---
+// const hora = new Date().getHours();
+const hora = 23;
+const abierto = hora >= 8 && hora < 20;
+---
+
+<section class="horario-card">
+  <h3>Cafetería Astro</h3>
+  <!-- Estado dinámico con badge de color -->
+  <span class={abierto ? "verde" : "rojo"}>
+    {abierto ? "Abierto" : "Cerrado"}
+  </span>
+  {!abierto && <p class="mensaje">Abrimos a las 8 a. m.</p>}
+</section>
+
+<style>
+  .horario-card {
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    max-width: 400px;
+    margin-top: 1rem;
+    font-family: system-ui, sans-serif;
+  }
+  .horario-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .verde,
+  .rojo {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .verde {
+    background-color: #dcfce7;
+    color: #15803d;
+  }
+  .rojo {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  .mensaje {
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    color: #475569;
+  }
+</style>
