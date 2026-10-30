@@ -1,0 +1,36 @@
+---
+import Boton from "./Boton.astro";
+---
+
+<article class="tarjeta">
+  <h3>Aprender Astro</h3>
+  <p>
+    Un framework moderno diseñado para la velocidad, que combina contenido
+    estático y componentes reactivos cuando los necesitas.
+  </p>
+  <Boton />
+</article>
+
+<style>
+  .tarjeta {
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    max-width: 400px;
+    margin-top: 1rem; /* para separarla del componente de arriba */
+  }
+
+  .tarjeta h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+  }
+
+  .tarjeta p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+</style>

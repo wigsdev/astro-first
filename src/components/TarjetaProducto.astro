@@ -1,0 +1,53 @@
+---
+const producto = {
+  nombre: "Auriculares",
+  imagen:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1sGWJjMQYV6SyFZzRgmtvnlh45fmPDyMY1Fr_PTmOtw&s=10",
+  precio: 55,
+  stock: 0,
+};
+---
+
+<article class="tarjeta-producto">
+  <img src={producto.imagen} alt={producto.nombre} />
+  <h3>{producto.nombre}</h3>
+  <p>Precio: ${producto.precio}</p>
+  <p class={producto.stock > 0 ? "en-stock" : "sin-stock"}>
+    {producto.stock > 0 ? `Disponible (${producto.stock} en stock)` : "Agotado"}
+  </p>
+  <button disabled={producto.stock === 0}>
+    {producto.stock > 0 ? "Comprar" : "Sin existencias"}
+  </button>
+</article>
+
+<style>
+  .tarjeta-producto {
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    max-width: 400px;
+    margin-top: 1rem;
+  }
+
+  .tarjeta-producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .tarjeta-producto h3 {
+    margin: 0.75rem 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: #1e293b;
+  }
+
+  .en-stock {
+    color: #16a34a; /* Verde */
+  }
+
+  .sin-stock {
+    color: #dc2626; /* Rojo */
+  }
+</style>

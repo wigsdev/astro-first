@@ -3,40 +3,23 @@
 // JavaScript que corre en el servidor
 import Ficha from "../components/Ficha.astro";
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+import Inicio from "../components/Inicio.astro";
+import Tarjeta from "../components/Tarjeta.astro";
+import Panel from "../components/Panel.astro";
+import TarjetaProducto from "../components/TarjetaProducto.astro";
 // FIN DEL SCRIPT
 ---
 
 <!-- 2. INICIO DE LA PLANTILLA --><!-- HTML + expresiones entre { } -->
 <Layout>
-  <main class="contenedor">
-    <nav class="navegacion">
-      <a href="/libros" class="enlace-nav">📚 Ver Biblioteca de Libros &rarr;</a>
-    </nav>
-
-    <Ficha />
-  </main>
+  <Header />
+  <Inicio />
+  <Ficha />
+  <Tarjeta />
+  <Panel />
+  <TarjetaProducto />
 </Layout>
 
-<style>
-  .contenedor {
-    padding: 2rem;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-  .navegacion {
-    margin-bottom: 1.5rem;
-  }
-  .enlace-nav {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #3b82f6;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-  }
-  .enlace-nav:hover {
-    background-color: #2563eb;
-  }
-</style>
 <!-- FIN DE LA PLANTILLA -->

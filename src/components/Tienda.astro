@@ -1,0 +1,14 @@
+---
+const abierto = true;
+const stock = 3;
+---
+
+{abierto && <span>Abierto ahora</span>}
+{
+  abierto ? (
+    <p>Te atendemos hasta las 8 p. m.</p>
+  ) : (
+    <p>Volvemos mañana a las 8 a. m.</p>
+  )
+}
+{stock < 5 && <p>¡Solo quedan {stock}!</p>}
