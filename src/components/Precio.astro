@@ -1,0 +1,13 @@
+---
+const producto = "Polo Nómada";
+const base = 40;
+const conIgv = base * 1.18;
+const final = conIgv * 0.9;
+---
+
+<article>
+  <h3>{producto}</h3>
+  <p>Base: S/ {base.toFixed(2)}</p>
+  <p>Con IGV: S/ {conIgv.toFixed(2)}</p>
+  <strong>Final: S/ {final.toFixed(2)}</strong>
+</article>

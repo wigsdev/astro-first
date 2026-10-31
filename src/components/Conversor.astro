@@ -1,0 +1,14 @@
+---
+const soles = 100;
+const tasaDolar = 3.75;
+const tasaEuro = 4.1;
+const dolares = soles / tasaDolar;
+const euros = soles / tasaEuro;
+---
+
+<section class="conversor">
+  <h3>Conversor de Moneda</h3>
+  <p>Monto: S/ {soles.toFixed(2)}</p>
+  <p>En Dólares: $ {dolares.toFixed(2)}</p>
+  <p>En Euros: € {euros.toFixed(2)}</p>
+</section>

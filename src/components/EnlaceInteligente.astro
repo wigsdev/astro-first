@@ -1,0 +1,10 @@
+---
+const url = "http://astro.build";
+const externo = true;
+---
+
+<a
+  href={url}
+  target={externo ? "_blank" : undefined}
+  rel={externo ? "noopener noreferrer" : undefined}>Astro build</a
+>

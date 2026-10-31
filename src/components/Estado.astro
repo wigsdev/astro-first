@@ -1,0 +1,16 @@
+---
+const activo = true;
+const texto = activo ? "Cuenta activa" : "Cuenta suspendida";
+---
+
+<!--Error común: sentencias dentro de { } --><!-- ---
+const activo = true;
+---
+
+ Error común: sentencias dentro de { } --><!-- MAL: un if dentro de la plantilla --><!--{ if (activo) {
+        <p>Cuenta activa</p>
+    }
+} --><!-- Error de sintaxis --><!-- BIEN: ternario o variable en el script -->
+<p>{texto}</p>
+<!-- o directamente: -->
+<p>{activo ? "Activa" : "Suspendida"}</p>

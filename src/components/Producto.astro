@@ -1,0 +1,12 @@
+---
+const url = "/productos/cafe";
+const foto = "/img/cafe.jpg";
+const nombre = "Café de Cajamarca";
+const oferta = true;
+---
+
+<!-- Atributos dinámicos -->
+<a href={url}>
+  <img src={foto} alt={nombre} />
+</a>
+<p class={`precio ${oferta ? "rojo" : ""}`}>S/ 35.00</p>
