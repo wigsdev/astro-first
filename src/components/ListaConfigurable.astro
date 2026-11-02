@@ -1,0 +1,9 @@
+---
+let ordenada = false;
+const Lista = ordenada ? "ol" : "ul";
+const items = ["Astro", "HTML", "TypeScript", "Javascript"];
+---
+
+<Lista>
+  {items.map((item) => <li>{item}</li>)}
+</Lista>

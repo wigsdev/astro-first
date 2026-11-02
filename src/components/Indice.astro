@@ -1,0 +1,49 @@
+---
+const secciones = [
+  { titulo: "Introducción", nivel: 2 },
+  { titulo: "¿Qué es una isla?", nivel: 3 },
+  { titulo: "Directivas", nivel: 3 },
+  { titulo: "Conclusión", nivel: 2 },
+];
+---
+
+<nav class="indice-container" aria-label="Índice del contenido">
+  <h2>Índice del Artículo</h2>
+
+  <div class="lista-secciones">
+    {
+      secciones.map(({ titulo, nivel }) => {
+        const H = nivel === 2 ? "h2" : "h3";
+        return <H class={`item-indice nivel-${nivel}`}>{titulo}</H>;
+      })
+    }
+  </div>
+</nav>
+
+<style>
+  .indice-container {
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    max-width: 450px;
+    font-family: system-ui, sans-serif;
+  }
+  .item-indice {
+    margin: 0.4rem 0;
+    color: #1e293b;
+  }
+  /* El nivel 2 destaca más */
+  .nivel-2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  /* El nivel 3 tiene sangría visual */
+  .nivel-3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 1.5rem;
+    color: #475569;
+  }
+</style>
+<!-- etiquetas dinamicas con condicionales, con atributos -->

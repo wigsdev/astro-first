@@ -1,0 +1,17 @@
+---
+const terminos = [
+  { t: "Isla", d: "Interactiva" },
+  { t: "SSG", d: "HTML en build" },
+];
+---
+
+<dl>
+  {
+    terminos.map((x) => (
+      <>
+        <dt>{x.t}</dt>
+        <dd>{x.d}</dd>
+      </>
+    ))
+  }
+</dl>

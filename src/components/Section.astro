@@ -1,0 +1,23 @@
+---
+// Definimos la variable en el Frontmatter para probar
+let mostrar = true;
+---
+
+<!-- 1. En la raíz de Astro no hace falta ningún <div> que envuelva todo -->
+<section>
+  <h2>Contenido Principal</h2>
+  <p>Párrafo 1: Elementos hermanos directos.</p>
+  <p>Párrafo 2: Sin etiquetas contenedoras sobrantes.</p>
+
+  <!-- 2. Dentro de una expresión { } usamos un fragmento <> </> -->
+  {
+    mostrar && (
+      <>
+        <h3>Subsección Condicional</h3>
+        <p>
+          Este bloque se muestra agrupado sin agregar ningún div al HTML final.
+        </p>
+      </>
+    )
+  }
+</section>

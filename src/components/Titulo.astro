@@ -1,0 +1,13 @@
+---
+import Boton from "./Boton.astro";
+import Enlace from "./Enlace.astro";
+
+let nivel = 2; // 👈 usando let puedes probar con 1 o 2 sin que TypeScript se queje
+const Etiqueta = nivel === 1 ? "h1" : "h2";
+
+let esEnlace = true;
+const Accion = esEnlace ? Enlace : Boton;
+---
+
+<Etiqueta>Bienvenidos</Etiqueta>
+<Accion />

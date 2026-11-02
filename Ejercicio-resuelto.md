@@ -1,21 +1,32 @@
-Enunciado: Crea Logo.astro y úsalo dentro de Header.astro; luego usa el Header en la página de inicio.
-src/components/Header.astro
+# Ejemplo Resuelto — Tema 8: Fragmentos y Etiquetas Dinámicas
 
+## Encabezado reutilizable por nivel
+
+> **Enunciado:** Genera el índice de un artículo donde cada sección use `h2` o `h3` según su nivel.
+
+- **Componente:** [`src/components/Indice.astro`](./src/components/Indice.astro)
+
+```astro
+---
+const secciones = [
+  { titulo: "Introducción", nivel: 2 },
+  { titulo: "¿Qué es una isla?", nivel: 3 },
+  { titulo: "Directivas", nivel: 3 },
+  { titulo: "Conclusión", nivel: 2 },
+];
 ---
 
-## import Logo from "./Logo.astro";
+{
+  secciones.map(({ titulo, nivel }) => {
+    const H = nivel === 2 ? "h2" : "h3";
+    return <H>{titulo}</H>;
+  })
+}
+```
 
-<header>
-<Logo />
-<nav>
-<a href="/">Inicio</a>
-<a href="/sobre-mi">Sobre mí</a>
-</nav>
-</header>
-1. Logo.astro está en la misma
-carpeta: se importa con ./.
-2. index.astro solo importa Header;
-no necesita saber que existe Logo.
-3. Si cambias el logo, se actualiza en todas
-las páginas.
-Resultado: La página muestra el encabezado completo con el logo, todo como HTML estático.
+### Puntos clave explicados:
+
+1. **Bloque antes del return:** Con llaves `{ }` en la función de `.map()`, puedes declarar la variable `const H` antes del `return`.
+2. **Regla de mayúscula:** `H` empieza con mayúscula para que Astro lo reconozca como una **etiqueta dinámica** y no como un tag HTML literal.
+3. **Accesibilidad:** Respeta automáticamente la jerarquía del documento (`h2` para secciones principales y `h3` para subsecciones).
+4. **Resultado:** Se generan dinámicamente dos `<h2>` y dos `<h3>` según el nivel asignado.
