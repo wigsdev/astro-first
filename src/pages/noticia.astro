@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// 1. Contenido HTML local simulando el cuerpo de una noticia
+const cuerpo = `
+  <p>Este es el <strong>primer párrafo</strong> de la noticia con texto enriquecido.</p>
+  <p>Este es el segundo párrafo con un <a href="#">enlace relevante</a>.</p>
+`;
+
+// 2. Simulación de promesa (equivalente a un fetch que trae HTML remoto)
+const avisoRemoto = Promise.resolve(
+  "<div class='alerta-remota'>📢 <strong>Comunicado oficial:</strong> Este bloque fue resuelto desde una Promesa/Fetch.</div>",
+);
+
+// Nota: si usas fetch real sería:
+// const url = "https://ejemplo.com/aviso.html";
+// <article set:html={fetch(url)} />
+---
+
+<Layout>
+  <main class="noticia-container">
+    <h1>Titular: Nueva actualización en Astro</h1>
+    <time datetime="2026-11-02">2 de noviembre de 2026</time>
+
+    <hr />
+
+    <section class="seccion-noticia">
+      <!-- Caso A: <Fragment> no genera ningún <div> extra en el HTML final -->
+      <h2>Cuerpo de la noticia (inyectado sin contenedor extra):</h2>
+      <Fragment set:html={cuerpo} />
+    </section>
+
+    <hr />
+
+    <section class="seccion-noticia">
+      <!-- Caso B: Inyección directa de una Promesa/Fetch -->
+      <h2>Aviso externo (resuelto directamente desde una Promesa):</h2>
+      <article set:html={avisoRemoto} />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .noticia-container {
+    padding: 2rem;
+    max-width: 650px;
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+    color: #1e293b;
+  }
+
+  h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  time {
+    color: #64748b;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 1.5rem 0;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: #334155;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Estilos para el HTML inyectado */
+  :global(.alerta-remota) {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    color: #1e40af;
+  }
+</style>
