@@ -1,25 +1,100 @@
 ---
 // 1. INICIO SCRIPT DEL COMPONENTE (FrontMatter)
 // JavaScript que corre en el servidor
-import Ficha from "../components/Ficha.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-
-import Inicio from "../components/Inicio.astro";
-import Tarjeta from "../components/Tarjeta.astro";
-import Panel from "../components/Panel.astro";
-import TarjetaProducto from "../components/TarjetaProducto.astro";
+import Comentarios from "../components/Comentarios.astro";
+import CampoTexto from "../components/CampoTexto.astro";
+import TarjetaUsuario from "../components/TarjetaUsuario.astro";
+import Estudiante from "../components/Estudiante.jsx";
 // FIN DEL SCRIPT
 ---
 
 <!-- 2. INICIO DE LA PLANTILLA --><!-- HTML + expresiones entre { } -->
 <Layout>
   <Header />
-  <Inicio />
-  <Ficha />
-  <Tarjeta />
-  <Panel />
-  <TarjetaProducto />
+  <main>
+    <Estudiante />
+    <Comentarios />
+    <CampoTexto />
+    <TarjetaUsuario />
+  </main>
 </Layout>
 
+<style>
+  main {
+    padding: 1rem;
+  }
+
+  /* Estilos para el componente de React (Estudiante.jsx) */
+  :global(.tarjeta-estudiante) {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 500px;
+    margin: 1.5rem auto;
+    font-family: system-ui, sans-serif;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  :global(.tarjeta-estudiante.matriculado) {
+    border-left: 6px solid #10b981;
+  }
+
+  :global(.tarjeta-estudiante.pendiente) {
+    border-left: 6px solid #f59e0b;
+  }
+
+  :global(.tarjeta-estudiante h2) {
+    margin-top: 0;
+    color: #1e293b;
+    font-size: 1.4rem;
+  }
+
+  :global(.tarjeta-estudiante p) {
+    margin: 0.4rem 0;
+    color: #475569;
+  }
+
+  :global(.badge-activo) {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  :global(.badge-pendiente) {
+    background-color: #fef3c7;
+    color: #92400e;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  :global(.cursos) {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  :global(.cursos h3) {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #334155;
+  }
+
+  :global(.cursos ul) {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #64748b;
+  }
+
+  :global(.cursos li) {
+    margin: 0.25rem 0;
+  }
+</style>
 <!-- FIN DE LA PLANTILLA -->

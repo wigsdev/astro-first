@@ -1,0 +1,81 @@
+---
+// src/components/TarjetaUsuario.astro
+// Traducción del componente React a Astro nativo
+
+interface Props {
+  nombre?: string;
+  rol?: string;
+  avatar?: string;
+  activo?: boolean;
+}
+
+const {
+  nombre = "Ana Martínez",
+  rol = "Diseñadora UI/UX",
+  avatar = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
+  activo = true,
+} = Astro.props;
+---
+
+<!-- En Astro usamos class (no className) y atributos HTML estándar -->
+<article class={`tarjeta-usuario ${activo ? "activo" : "inactivo"}`}>
+  <img src={avatar} alt={`Foto de ${nombre}`} class="avatar" />
+  <div class="info">
+    <h3 tabindex="0">{nombre}</h3>
+    <p class="rol">{rol}</p>
+    <span class="estado">
+      {/* Comentario privado de Astro: se descarta en el HTML final */}
+      {activo ? "🟢 Disponible" : "🔴 Ocupado"}
+    </span>
+  </div>
+</article>
+
+<style>
+  .tarjeta-usuario {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    max-width: 400px;
+    margin: 1rem auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    font-family: system-ui, sans-serif;
+  }
+
+  .tarjeta-usuario.activo {
+    border-left: 4px solid #10b981;
+  }
+
+  .tarjeta-usuario.inactivo {
+    border-left: 4px solid #94a3b8;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1e293b;
+  }
+
+  .rol {
+    margin: 0.2rem 0 0.4rem;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+
+  .estado {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #0f766e;
+  }
+</style>
+

@@ -1,0 +1,26 @@
+---
+const tipo = "error";
+---
+
+<div class={"alerta " + tipo} tabindex="0">
+  {/* aviso */}
+  <p>Revisa el formulario</p>
+</div>
+
+<style>
+  .alerta {
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem auto;
+    max-width: 800px;
+    font-family: system-ui, sans-serif;
+  }
+  .error {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #991b1b;
+  }
+  p {
+    margin: 0;
+  }
+</style>

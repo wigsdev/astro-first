@@ -1,0 +1,41 @@
+---
+// CampoTexto.astro
+// Ejercicio 1: Corrección de atributos JSX (htmlFor y className) a HTML nativo (for y class)
+---
+
+<div class="grupo-campo">
+  <!-- En Astro se usa 'for' (no htmlFor) y 'class' (no className) -->
+  <label for="email" class="campo">Correo</label>
+  <input type="email" id="email" placeholder="usuario@ejemplo.com" class="input-texto" />
+</div>
+
+<style>
+  .grupo-campo {
+    margin: 1rem auto;
+    max-width: 800px;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .campo {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.95rem;
+  }
+
+  .input-texto {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+  }
+
+  .input-texto:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+</style>
+
