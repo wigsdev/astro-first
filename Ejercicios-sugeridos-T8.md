@@ -12,6 +12,7 @@
 
 - **Componente:** [`src/components/Preguntas.astro`](./src/components/Preguntas.astro)
 - **Implementación:**
+
   ```astro
   ---
   const preguntas = [
@@ -33,6 +34,7 @@
     }
   </dl>
   ```
+
 - **Explicación:** Una lista de definición `<dl>` exige semánticamente que sus hijos directos sean pares de `<dt>` y `<dd>`. El fragmento `<> ... </>` agrupa ambos elementos para la iteración de JavaScript sin añadir ningún `<div>` contenedor que rompa la semántica HTML.
 
 ---
@@ -45,6 +47,7 @@
 
 - **Componente:** [`src/components/ListaConfigurable.astro`](./src/components/ListaConfigurable.astro)
 - **Implementación:**
+
   ```astro
   ---
   let ordenada = false;
@@ -56,6 +59,7 @@
     {items.map((item) => <li>{item}</li>)}
   </Lista>
   ```
+
 - **Explicación:** Al asignar el nombre de la etiqueta (`"ol"` o `"ul"`) a una variable que comience con mayúscula (`Lista`), Astro la interpreta como una **etiqueta dinámica**, evitando duplicar el bucle `.map()` dentro de un bloque `if/else`.
 
 ---
@@ -68,9 +72,10 @@
 
 - **Componente:** [`src/components/Oferta.astro`](./src/components/Oferta.astro)
 - **Implementación:**
+
   ```astro
   ---
-  let hayOferta = false;
+  let hayOferta = true;
   ---
 
   {
@@ -82,4 +87,5 @@
     )
   }
   ```
+
 - **Explicación:** Dentro de la expresión `{ hayOferta && ... }`, JavaScript exige devolver un único nodo. El fragmento `<> ... </>` cumple con esa regla sintáctica, pero al compilarse en el navegador, Astro lo suprime por completo, insertando directamente `<h2>` y `<p>` sin ningún contenedor extra en el DOM.
