@@ -1,0 +1,60 @@
+---
+const badge = "Nueva temporada 2026";
+---
+
+<section class="hero">
+  {/* sección de bienvenida*/}
+  <span class="hero-tag">{badge}</span>
+  <h1>Lo último en tecnología para potenciar tu setup</h1>
+  <p>
+    Laptops ultraligeras, monitores gamers y periféricos de alta gama con envíos
+    inmediatos y garantía local.
+  </p>
+  <a href="#productos" class="btn-cta">Ver productos disponibles</a>
+</section>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 2rem);
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    border-bottom: 1px solid #cbd5e1;
+  }
+  .hero-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    border-radius: 999px;
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    font-weight: 600;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  }
+  h1 {
+    font-size: clamp(1.6rem, 4.5vw, 2.75rem);
+    color: #0f172a;
+    max-width: 750px;
+    margin: 0 auto clamp(0.75rem, 2vw, 1.25rem);
+    line-height: 1.2;
+  }
+  p {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: #475569;
+    max-width: 620px;
+    margin: 0 auto clamp(1.25rem, 3vw, 2rem);
+    line-height: 1.5;
+  }
+  .btn-cta {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1.25rem, 3vw, 1.75rem);
+    border-radius: 6px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+  .btn-cta:hover {
+    background-color: #1d4ed8;
+  }
+</style>
