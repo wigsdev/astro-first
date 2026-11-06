@@ -1,0 +1,48 @@
+---
+// src/components/Bienvenida.astro
+// Variables solicitadas en el ejercicio
+const nombre = "Wilmer";
+const apellido = "Gulcochia";
+const centro = "Nómada Bootcamp";
+---
+
+<div class="mensaje-bienvenida">
+  <!-- 
+    Regla: espacios estilo JSX
+    Al separar el mensaje en etiquetas distintas en varias líneas,
+    Astro elimina el salto de línea. Usamos {" "} de manera explícita 
+    para garantizar el espacio entre los elementos.
+  -->
+  <p>
+    <span>Bienvenido {nombre} {apellido},</span>{" "}
+    <em>estudiante de {centro}.</em>
+  </p>
+</div>
+
+<style>
+  .mensaje-bienvenida {
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    font-weight: 500;
+  }
+
+  em {
+    font-style: italic;
+    color: #15803d;
+  }
+</style>

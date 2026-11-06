@@ -1,0 +1,59 @@
+---
+// src/components/InspeccionarDOM.astro
+// Ejercicio 2: Anidación inválida para inspeccionar el DOM en DevTools
+---
+
+<section class="caja-prueba">
+  <h2>Ejercicio 2: Inspección del árbol DOM</h2>
+  <p class="instruccion">
+    Haz clic derecho sobre la palabra "Hola" de abajo y elige <strong>Inspeccionar elemento (F12)</strong>:
+  </p>
+
+  <div class="demostracion">
+    <!-- Código del ejercicio: un <div> dentro de un <p> -->
+    <p>
+      <div>Hola</div>
+    </p>
+  </div>
+
+  <small class="explicacion">
+    <strong>Comportamiento del navegador:</strong> El navegador repara automáticamente el marcado cerrando el <code>&lt;p&gt;</code> antes de abrir el <code>&lt;div&gt;</code>.
+  </small>
+</section>
+
+<style>
+  .caja-prueba {
+    border: 1px solid #cbd5e1;
+    padding: 1.25rem;
+    border-radius: 8px;
+    background: #f8fafc;
+    margin: 1.5rem auto;
+    max-width: 650px;
+    font-family: system-ui, sans-serif;
+  }
+  h2 {
+    margin-top: 0;
+    color: #1e293b;
+    font-size: 1.25rem;
+  }
+  .instruccion {
+    color: #475569;
+    font-size: 0.95rem;
+  }
+  .demostracion {
+    background: #ffffff;
+    border: 2px dashed #94a3b8;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 0.75rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .explicacion {
+    color: #64748b;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.5rem;
+  }
+</style>
+

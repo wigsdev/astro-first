@@ -1,25 +1,27 @@
 ---
 // 1. INICIO SCRIPT DEL COMPONENTE (FrontMatter)
 // JavaScript que corre en el servidor
-import Ficha from "../components/Ficha.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-
-import Inicio from "../components/Inicio.astro";
-import Tarjeta from "../components/Tarjeta.astro";
-import Panel from "../components/Panel.astro";
-import TarjetaProducto from "../components/TarjetaProducto.astro";
+import Bienvenida from "../components/Bienvenida.astro";
+import InspeccionarDOM from "../components/InspeccionarDOM.astro";
+import EspaciosNombres from "../components/EspaciosNombres.astro";
 // FIN DEL SCRIPT
 ---
 
 <!-- 2. INICIO DE LA PLANTILLA --><!-- HTML + expresiones entre { } -->
 <Layout>
   <Header />
-  <Inicio />
-  <Ficha />
-  <Tarjeta />
-  <Panel />
-  <TarjetaProducto />
+  <main>
+    <Bienvenida />
+    <InspeccionarDOM />
+    <EspaciosNombres />
+  </main>
 </Layout>
 
+<style>
+  main {
+    padding: 1.5rem 1rem;
+  }
+</style>
 <!-- FIN DE LA PLANTILLA -->

@@ -1,0 +1,104 @@
+---
+// src/components/EspaciosNombres.astro
+// Ejercicio 3: Dos span en líneas distintas y 2 formas de corregirlo
+const nombre = "Wilmer";
+const apellido = "Gulcochia";
+---
+
+<section class="caja-espacios">
+  <h2>Ejercicio 3: Espacios entre elementos en Astro</h2>
+
+  <!-- 1. El problema: Dos span en líneas distintas sin espacio -->
+  <div class="caso caso-problema">
+    <h3>❌ Problema inicial (saltos de línea eliminados por Astro):</h3>
+    <p class="resultado">
+      <span>{nombre}</span>
+      <span>{apellido}</span>
+    </p>
+    <small>En pantalla se ve pegado como una sola palabra: <em>"WilmerGulcochia"</em></small>
+  </div>
+
+  <hr />
+
+  <!-- 2. Corrección 1: Espacio explícito estilo JSX {" "} -->
+  <div class="caso caso-solucion">
+    <h3>✅ Solución 1: Espacio explícito estilo JSX <code>{`{" "}`}</code>:</h3>
+    <p class="resultado">
+      <span>{nombre}</span>{" "}
+      <span>{apellido}</span>
+    </p>
+    <small>Inyecta un espacio como expresión de JavaScript inmutable.</small>
+  </div>
+
+  <hr />
+
+  <!-- 3. Corrección 2: Todo en la misma línea continua -->
+  <div class="caso caso-solucion">
+    <h3>✅ Solución 2: Todo en la misma línea física:</h3>
+    <p class="resultado">
+      <span>{nombre}</span> <span>{apellido}</span>
+    </p>
+    <small>Astro sí conserva los espacios que se encuentran dentro de la misma línea de texto.</small>
+  </div>
+</section>
+
+<style>
+  .caja-espacios {
+    border: 1px solid #cbd5e1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: #ffffff;
+    margin: 1.5rem auto;
+    max-width: 650px;
+    font-family: system-ui, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+  h2 {
+    margin-top: 0;
+    color: #0f172a;
+    font-size: 1.25rem;
+  }
+  .caso h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    color: #334155;
+  }
+  .resultado {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1e293b;
+    background: #f1f5f9;
+    padding: 0.6rem 0.85rem;
+    border-radius: 6px;
+    margin: 0.4rem 0;
+    display: inline-block;
+    border: 1px solid #e2e8f0;
+  }
+  .caso-problema .resultado {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b;
+  }
+  .caso-solucion .resultado {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+  }
+  small {
+    color: #64748b;
+    display: block;
+    font-size: 0.82rem;
+  }
+  code {
+    background: #e2e8f0;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+  }
+  hr {
+    border: 0;
+    border-top: 1px dashed #cbd5e1;
+    margin: 1.25rem 0;
+  }
+</style>
+
