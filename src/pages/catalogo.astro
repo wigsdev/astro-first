@@ -1,0 +1,73 @@
+---
+// src/pages/catalogo.astro
+import Layout from "../layouts/Layout.astro";
+import CursoCard from "../components/CursoCard.astro";
+import cursos from "../data/cursos.json";
+---
+
+<Layout title="Catálogo de Cursos Especializados — AcademiaDev">
+  <div class="container catalog-wrapper">
+    <header class="catalog-header">
+      <span class="badge-pill">Formación Profesional</span>
+      <h1>Catálogo de Cursos Especializados</h1>
+      <p>Aprende las tecnologías más demandadas del desarrollo web moderno</p>
+    </header>
+
+    {/* Requisito 6: Mensaje condicional si el arreglo está vacío */}
+    {
+      cursos.length === 0 ? (
+        <div class="empty-state">
+          <p>Pronto más cursos</p>
+        </div>
+      ) : (
+        <div class="courses-grid">
+          {cursos.map((curso) => (
+            <CursoCard {...curso} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</Layout>
+
+<style>
+  .catalog-wrapper {
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+    padding-bottom: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .catalog-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .catalog-header h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    color: var(--color-text-heading);
+    margin: 0 0 0.5rem;
+  }
+
+  .catalog-header p {
+    color: var(--color-text-muted);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    margin: 0;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: clamp(2rem, 6vw, 4rem);
+    background-color: var(--color-card-bg);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 600;
+  }
+
+  /* Responsive Grid with clamp(): 3 in desktop, 2 in tablet, 1 in mobile */
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, clamp(280px, 28vw, 320px)), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+</style>

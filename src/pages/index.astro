@@ -1,19 +1,72 @@
 ---
+// src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <main>
-    <h1>Mi Proyecto Astro</h1>
-    <p>Plantilla base limpia para nuevos temas y proyectos.</p>
-  </main>
+<Layout title="AcademiaDev — Plataforma de Formación">
+  <div class="container hero-wrapper">
+    <section class="hero-section">
+      <span class="badge-pill">Plataforma de Formación Práctica</span>
+      <h1>Domina las Tecnologías del Desarrollo Web Moderno</h1>
+      <p>
+        Aprende arquitectura basada en componentes, sitios ultra rápidos con cero JavaScript en el cliente y tipado estático profesional.
+      </p>
+      <div class="hero-actions">
+        <a href="/catalogo" class="btn-primary">Ver Catálogo de Cursos →</a>
+      </div>
+    </section>
+  </div>
 </Layout>
 
 <style>
-  main {
+  .hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: clamp(3rem, 8vw, 6rem);
+    padding-bottom: clamp(3rem, 8vw, 6rem);
+  }
+
+  .hero-section {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    color: var(--color-text-heading);
+    line-height: 1.2;
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+  }
+
+  p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+    max-width: 650px;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: clamp(0.75rem, 2vw, 0.9rem) clamp(1.5rem, 3vw, 2rem);
+    border-radius: var(--radius-sm);
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    box-shadow: var(--shadow-primary);
+    transition: background-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
   }
 </style>
