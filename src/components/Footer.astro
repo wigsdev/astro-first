@@ -1,0 +1,32 @@
+---
+// src/components/Footer.astro
+const anio = new Date().getFullYear();
+const redes = [
+  { nombre: "Instagram", url: "#" },
+  { nombre: "TikTok", url: "#" },
+];
+---
+
+<footer>
+  <p>Jr. Amalia Puga 123, Cajamarca</p>
+  <p class="redes">{redes.map((r) => <a href={r.url}>{r.nombre}</a>)}</p>
+  <p>© {anio} Café Andino</p>
+</footer>
+
+<style>
+  footer {
+    text-align: center;
+    padding: clamp(1rem, 3vw, 2rem);
+    border-top: 1px solid #e0e0e0;
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+  }
+  .redes {
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  a {
+    color: inherit;
+  }
+</style>

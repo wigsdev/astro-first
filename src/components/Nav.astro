@@ -1,0 +1,23 @@
+---
+// src/components/Nav.astro
+const enlaces = [
+  { texto: "Inicio", url: "/" },
+  { texto: "Carta", url: "/carta" },
+  { texto: "Contacto", url: "/contacto" },
+];
+---
+
+<nav>
+  {enlaces.map((e) => <a href={e.url}>{e.texto}</a>)}
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

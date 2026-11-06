@@ -1,0 +1,17 @@
+---
+// src/components/Banner.astro
+const promoActiva = true;
+---
+
+{promoActiva && <aside class="banner">Hoy 2x1 en capuchinos</aside>}
+
+<style>
+  .banner {
+    background-color: #5c3d2e;
+    color: #ffffff;
+    text-align: center;
+    padding: clamp(0.4rem, 1.5vw, 0.6rem);
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-weight: 600;
+  }
+</style>
