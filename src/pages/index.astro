@@ -1,25 +1,19 @@
 ---
-// 1. INICIO SCRIPT DEL COMPONENTE (FrontMatter)
-// JavaScript que corre en el servidor
-import Ficha from "../components/Ficha.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-
-import Inicio from "../components/Inicio.astro";
-import Tarjeta from "../components/Tarjeta.astro";
-import Panel from "../components/Panel.astro";
-import TarjetaProducto from "../components/TarjetaProducto.astro";
-// FIN DEL SCRIPT
 ---
 
-<!-- 2. INICIO DE LA PLANTILLA --><!-- HTML + expresiones entre { } -->
 <Layout>
-  <Header />
-  <Inicio />
-  <Ficha />
-  <Tarjeta />
-  <Panel />
-  <TarjetaProducto />
+  <main>
+    <h1>Mi Proyecto Astro</h1>
+    <p>Plantilla base limpia para nuevos temas y proyectos.</p>
+  </main>
 </Layout>
 
-<!-- FIN DE LA PLANTILLA -->
+<style>
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
