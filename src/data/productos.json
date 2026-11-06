@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laptop Ultrabook Pro 15\"",
+    "precio": 3499.00,
+    "imagen": "/img/laptop.jpg",
+    "disponible": true,
+    "nuevo": true,
+    "categoria": "Computadoras"
+  },
+  {
+    "id": 2,
+    "nombre": "Auriculares Inalámbricos Pro",
+    "precio": 450.00,
+    "imagen": "/img/auriculares.jpg",
+    "disponible": true,
+    "nuevo": true,
+    "categoria": "Audio"
+  },
+  {
+    "id": 3,
+    "nombre": "Teclado Mecánico RGB",
+    "precio": 280.00,
+    "imagen": "/img/teclado.jpg",
+    "disponible": true,
+    "nuevo": false,
+    "categoria": "Periféricos"
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor Gamer 27\" 165Hz",
+    "precio": 920.00,
+    "imagen": "/img/monitor.jpg",
+    "disponible": true,
+    "nuevo": false,
+    "categoria": "Monitores"
+  },
+  {
+    "id": 5,
+    "nombre": "Tarjeta Gráfica RTX 4070",
+    "precio": 2650.00,
+    "imagen": "/img/laptop.jpg",
+    "disponible": false,
+    "nuevo": false,
+    "categoria": "Componentes"
+  },
+  {
+    "id": 6,
+    "nombre": "Smartwatch Deportivo V2",
+    "precio": 380.00,
+    "imagen": "/img/auriculares.jpg",
+    "disponible": false,
+    "nuevo": true,
+    "categoria": "Wearables"
+  }
+]
+
