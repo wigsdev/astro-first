@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "nombre": "Astro 7 desde Cero",
+    "destacado": true,
+    "disponible": true,
+    "precio": 89.00,
+    "calificacion": 4.9,
+    "alumnos": 1240,
+    "imagen": "/img/cursos/astro.jpg",
+    "nivel": "Principiante",
+    "horas": 20,
+    "descripcionHtml": "<p>Aprende la arquitectura <strong>Islands</strong> y genera sitios web ultrarrápidos con <em>cero JavaScript</em> en el cliente.</p>",
+    "modulos": [
+      {
+        "titulo": "Fundamentos y Sintaxis",
+        "temas": ["Estructura de proyecto", "Frontmatter y plantilla", "Componentes .astro"]
+      },
+      {
+        "titulo": "Lógica y Renderizado",
+        "temas": ["Expresiones dinámicas", "Renderizado condicional", "Listas con map()"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "TypeScript Esencial",
+    "destacado": true,
+    "disponible": true,
+    "precio": 79.00,
+    "calificacion": 4.8,
+    "alumnos": 980,
+    "imagen": "/img/cursos/typescript.jpg",
+    "nivel": "Intermedio",
+    "horas": 15,
+    "descripcionHtml": "<p>Domina el tipado estático con <strong>interfaces</strong>, generics y configuración estricta para proyectos escalables.</p>",
+    "modulos": [
+      {
+        "titulo": "Tipos Básicos e Interfaces",
+        "temas": ["Tipos primitivos", "Definición de interfaces", "Type Aliases vs Interfaces"]
+      },
+      {
+        "titulo": "TypeScript Avanzado",
+        "temas": ["Generics", "Union y Intersection types", "Tipado de Props en Astro"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Tailwind CSS Moderno",
+    "destacado": false,
+    "disponible": true,
+    "precio": 59.00,
+    "calificacion": 4.7,
+    "alumnos": 850,
+    "imagen": "/img/cursos/tailwind.jpg",
+    "nivel": "Principiante",
+    "horas": 12,
+    "descripcionHtml": "<p>Diseña interfaces atractivas y responsivas rápidamente utilizando clases de <em>utilidad</em> y diseño adaptable.</p>",
+    "modulos": [
+      {
+        "titulo": "Fundamentos de Utilidades",
+        "temas": ["Configuración de Tailwind", "Espaciado y flexbox", "Paleta de colores"]
+      },
+      {
+        "titulo": "Responsive y Estados",
+        "temas": ["Breakpoints de pantalla", "Pseudo-clases hover y focus", "Modo oscuro"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Node.js y APIs REST",
+    "destacado": false,
+    "disponible": true,
+    "precio": 99.00,
+    "calificacion": 4.9,
+    "alumnos": 1120,
+    "imagen": "/img/cursos/nodejs.jpg",
+    "nivel": "Avanzado",
+    "horas": 25,
+    "descripcionHtml": "<p>Construye servidores backend robustos, manejo asíncrono y consumo de <strong>APIs seguras</strong>.</p>",
+    "modulos": [
+      {
+        "titulo": "Arquitectura del Servidor",
+        "temas": ["Event Loop", "Módulos ESM vs CJS", "Creación de servidor HTTP"]
+      },
+      {
+        "titulo": "Endpoints y Persistencia",
+        "temas": ["Rutas y controladores", "Validación de peticiones", "Manejo de errores"]
+      }
+    ]
+  }
+]
