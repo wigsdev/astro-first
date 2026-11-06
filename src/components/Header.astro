@@ -1,0 +1,46 @@
+---
+const enlaces = [
+  { texto: "Inicio", url: "/" },
+  { texto: "Productos", url: "#productos" },
+  { texto: "Ofertas", url: "#ofertas" },
+  { texto: "Contacto", url: "#contacto" },
+];
+---
+
+<header>
+  {/* menú dinámico con map() */}
+  <a href="/" class="logo">UchizaTech</a>
+  <nav>
+    {enlaces.map((e) => <a href={e.url}>{e.texto}</a>)}
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 4vw, 2.5rem);
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #ffffff;
+  }
+  .logo {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #1e293b;
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  nav a {
+    text-decoration: none;
+    color: #475569;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-weight: 500;
+  }
+  nav a:hover {
+    color: #2563eb;
+  }
+</style>

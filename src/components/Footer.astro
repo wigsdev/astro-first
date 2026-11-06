@@ -1,0 +1,57 @@
+---
+const anioActual = new Date().getFullYear();
+
+const redesSociales = [
+  { nombre: "Facebook", url: "https://facebook.com" },
+  { nombre: "Instagram", url: "https://instagram.com" },
+];
+---
+
+<footer>
+  {
+    /* Comentario en Footer: Redes sociales generadas con map() y año dinámico calculado en build */
+  }
+  <p class="direccion">UchizaTech — Av. Carlos Arévalo 375 - Uchiza</p>
+  <div class="redes">
+    {
+      redesSociales.map((red) => (
+        <a href={red.url} target="_blank" rel="noopener noreferrer">
+          {red.nombre}
+        </a>
+      ))
+    }
+  </div>
+  <p class="copyright">
+    © {anioActual} UchizaTech. Todos los derechos reservados.
+  </p>
+</footer>
+
+<style>
+  footer {
+    text-align: center;
+    padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
+    border-top: 1px solid #e2e8f0;
+    margin-top: clamp(2rem, 5vw, 4rem);
+    background-color: #ffffff;
+    color: #64748b;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+  }
+  .direccion {
+    margin-bottom: 0.75rem;
+  }
+  .redes {
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+    margin-bottom: 0.75rem;
+  }
+  .redes a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .copyright {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+</style>
