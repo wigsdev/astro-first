@@ -1,0 +1,86 @@
+---
+// src/components/Header.astro
+const enlaces = [
+  { texto: "Inicio", url: "/" },
+  { texto: "Catálogo de Cursos", url: "/catalogo" },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(url: string) {
+  if (url === "/") {
+    return currentPath === "/" || currentPath === "";
+  }
+  return currentPath.startsWith(url);
+}
+---
+
+<header class="navbar">
+  <div class="container nav-container">
+    <a href="/" class="logo">🎓 AcademiaDev</a>
+
+    <nav aria-label="Navegación principal">
+      {
+        enlaces.map((e) => (
+          <a
+            href={e.url}
+            class={`nav-link ${isActive(e.url) ? "active" : ""}`}
+            aria-current={isActive(e.url) ? "page" : undefined}
+          >
+            {e.texto}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    background-color: var(--color-card-bg);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: clamp(0.75rem, 2vw, 1rem);
+    padding-bottom: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .logo {
+    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    color: var(--color-text-heading);
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-link.active {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    font-weight: 600;
+  }
+</style>

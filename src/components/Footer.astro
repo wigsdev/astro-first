@@ -1,0 +1,33 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-container">
+    <p>AcademiaDev — Cursos prácticos con arquitectura moderna de Astro</p>
+    <p class="copyright">© {currentYear} Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-card-bg);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+    padding-top: clamp(1.5rem, 3vw, 2rem);
+    padding-bottom: clamp(1.5rem, 3vw, 2rem);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: clamp(0.85rem, 1.8vw, 0.9rem);
+  }
+
+  .footer-container p {
+    margin: 0.25rem 0;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    color: var(--color-text-subtle);
+  }
+</style>
