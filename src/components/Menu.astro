@@ -1,0 +1,32 @@
+---
+// src/components/Menu.astro
+const platos = [
+  { n: "Café", p: 6 },
+  { n: "Humita", p: 4.5 },
+];
+const abierto = true;
+---
+
+<section class="menu">
+  <h2>Menú</h2>
+  {abierto && <p>Abierto</p>}
+  <ul>
+    {
+      platos.map((x) => (
+        <li>
+          {x.n} - S/ {x.p}
+        </li>
+      ))
+    }
+  </ul>
+  <span>Total:</span>{" "}
+  <strong>{platos.length}</strong>
+  <button id="btn-pedir">Pedir</button>
+  <img src="/menu.jpg" alt="Menú" />
+</section>
+
+<script>
+  document.getElementById("btn-pedir")?.addEventListener("click", () => {
+    alert("Pedido");
+  });
+</script>
