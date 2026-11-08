@@ -1,19 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
+// src/pages/index.astro
+import Menu from "../components/Menu.astro";
 ---
 
-<Layout>
-  <main>
-    <h1>Mi Proyecto Astro</h1>
-    <p>Plantilla base limpia para nuevos temas y proyectos.</p>
-  </main>
-</Layout>
-
-<style>
-  main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-</style>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Reto 3 — Menu.astro</title>
+  </head>
+  <body>
+    <main>
+      <Menu />
+    </main>
+  </body>
+</html>
