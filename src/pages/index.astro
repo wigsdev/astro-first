@@ -1,19 +1,141 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Perfil from "../components/Perfil.astro";
+import Cita from "../components/Cita.astro";
+import Seccion from "../components/Seccion.astro";
+import Alerta from "../components/Alerta.astro";
 ---
 
 <Layout>
-  <main>
-    <h1>Mi Proyecto Astro</h1>
-    <p>Plantilla base limpia para nuevos temas y proyectos.</p>
+  <main class="mx-auto max-w-5xl p-6 font-sans">
+    <header class="mb-8 text-center">
+      <h1 class="text-3xl font-extrabold text-gray-900">
+        Tarea - Sesión 3: Slots en Astro
+      </h1>
+      <p class="text-gray-600">
+        Demostración práctica de composición con componentes contenedores y
+        slots.
+      </p>
+    </header>
+    <!-- Demostración del Ejercicio Resuelto: Alertas -->
+    <Seccion>
+      <h2 class="text-xl font-bold text-gray-900 mb-4">
+        4. Alertas del Sistema (Props + Slot)
+      </h2>
+
+      <!-- 1. Alerta por defecto (tipo info) -->
+      <Alerta>
+        <p>
+          Este es un aviso informativo utilizando el valor por defecto de la
+          prop.
+        </p>
+      </Alerta>
+
+      <!-- 2. Alerta de éxito con HTML enriquecido -->
+      <Alerta tipo="exito">
+        <p>
+          ¡Tu cuenta ha sido creada con éxito! Revisa tu{" "}
+          <strong>correo electrónico</strong> para activarla.
+        </p>
+      </Alerta>
+
+      <!-- 3. Alerta de error con enlace interno -->
+      <Alerta tipo="error">
+        <p>
+          Ocurrió un error al procesar la solicitud.
+          <a href="/ayuda" class="underline font-medium hover:text-red-950">
+            Contactar soporte
+          </a>
+          .
+        </p>
+      </Alerta>
+    </Seccion>
+    <!-- Bloque 1: Introducción a los slots -->
+    <Seccion>
+      <h2 class="text-xl font-bold text-gray-900 mb-2">1. ¿Qué es un slot?</h2>
+      <p class="text-gray-700 leading-relaxed">
+        Un <strong>slot</strong> es un espacio reservado dentro de un componente
+        donde se inserta el contenido HTML que escribes entre su etiqueta de
+        apertura y de cierre.
+      </p>
+      <p class="mt-2 text-sm text-gray-500">
+        Permite que el componente controle el marco visual y el usuario decida
+        libremente el contenido interno.
+      </p>
+    </Seccion>
+
+    <!-- BLOQUE 2: Bloque de Citas (Ejercicio 2) -->
+    <Seccion>
+      <h2 class="text-xl font-bold text-gray-900 mb-4">
+        2. Citas Célebres sobre Programación
+      </h2>
+      <!-- Primera Cita -->
+      <Cita autor="Linus Torvalds">
+        <p>
+          «Hablar es barato. <strong>Muéstrame el código</strong>.»
+        </p>
+      </Cita>
+      <!-- Segunda Cita -->
+      <Cita autor="Martin Fowler">
+        <p>
+          «Cualquier tonto puede escribir código que un ordenador entienda. Los
+          buenos programadores escriben código que los{" "}
+          <em>humanos pueden entender</em>.»
+        </p>
+      </Cita>
+    </Seccion>
+    <Seccion>
+      <h1 class="mb-6 text-2xl font-bold text-gray-900">
+        Perfiles de Estudiantes
+      </h1>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <!-- Perfil 1: Párrafo con texto y ubicación -->
+        <Perfil>
+          <h2 class="text-lg font-bold text-gray-900">Wilmer</h2>
+          <p class="text-sm text-gray-600">Especialista en Frontend y Astro.</p>
+          <p class="text-sm font-medium text-gray-800">📍 Uchiza, Perú</p>
+        </Perfil>
+
+        <!-- Perfil 2: Lista de tecnologías -->
+        <Perfil>
+          <h2 class="text-lg font-bold text-gray-900">Ana</h2>
+          <p class="text-sm text-gray-600">Diseñadora UI/UX.</p>
+          <div class="flex flex-wrap gap-1 pt-1">
+            <span class="rounded bg-purple-100 px-2 py-0.5 text-xs font-semibold text-purple-700">
+              Figma
+            </span>
+            <span class="rounded bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">
+              Tailwind
+            </span>
+          </div>
+        </Perfil>
+
+        <!-- Perfil 3: Estado de curso -->
+        <Perfil>
+          <h2 class="text-lg font-bold text-gray-900">Carlos</h2>
+          <p class="text-sm text-gray-600">Estudiante de JavaScript Moderno.</p>
+          <span class="inline-block rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-bold text-green-700">
+            Matriculado
+          </span>
+        </Perfil>
+      </div>
+    </Seccion>
+
+    <div class="mt-8">
+      <Card>
+        <h2 class="text-xl font-bold text-gray-900">Aprendiendo Astro</h2>
+        <p class="mt-2 text-gray-600">
+          Astro sirve para crear sitios webs modernos
+        </p>
+        <a
+          href="/curso"
+          class="mt-2 inline-block text-blue-600 hover:underline"
+        >
+          Ver curso →
+        </a>
+      </Card>
+    </div>
   </main>
 </Layout>
-
-<style>
-  main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-</style>
