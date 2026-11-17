@@ -1,0 +1,16 @@
+---
+// src/components/Perfil.astro
+// ¡Cero props! El componente solo provee el marco visual
+---
+
+<article class="flex max-w-xs flex-col justify-between rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+  <!-- Aquí entra TODO el contenido personalizado: nombre, párrafos, insignias, etc. -->
+  <div class="space-y-3">
+    <slot />
+  </div>
+
+  <!-- Estructura común fija: el botón -->
+  <button class="mt-5 w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700">
+    Ver perfil
+  </button>
+</article>
